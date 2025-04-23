@@ -11,7 +11,7 @@ import messageRoute from "./routes/message.route.js";
 const app = express();
 const allowedOrigins = [
   "http://localhost:5173", // For local development
-  "https://real-estate-dev-1.onrender.com", // Replace with your Render frontend URL
+  "https://real-estate-dev-2.onrender.com", // Replace with your Render frontend URL
 ];
 
 app.use(cors({
