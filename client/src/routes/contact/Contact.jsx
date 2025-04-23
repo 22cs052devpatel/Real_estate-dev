@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import "./contact.scss";
+import "./contactus.scss";
+
 
 const Contact = () => {
   const navigate = useNavigate();
@@ -36,4 +37,3 @@ const Contact = () => {
 };
 
 export default Contact;
-    
