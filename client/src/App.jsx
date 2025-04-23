@@ -10,6 +10,10 @@ import ProfileUpdatePage from "./routes/profileUpdatePage/profileUpdatePage";
 import NewPostPage from "./routes/newPostPage/newPostPage";
 import { listPageLoader, profilePageLoader, singlePageLoader } from "./lib/loaders";
 import Chatbot from "./components/chatbot/Chatbot";
+import About from "./routes/about/About";
+import Contact from "./routes/contact/Contact";
+import ContactUs from "./routes/contact/ContactUs";
+import Faq from "./routes/contact/faq";
 
 function App() {
   const router = createBrowserRouter([
@@ -20,9 +24,26 @@ function App() {
       <Chatbot  />{/* Add Chatbot here */}
     </>,
       children: [
+
         {
           path: "/",
           element: <HomePage />,
+        },
+        {
+          path: "/about",
+          element: <About />,
+        },
+        {
+          path: "/contact",
+          element: <Contact />,
+        },
+        {
+          path: "/contact-us",
+          element: <ContactUs />,
+        },
+        {
+          path: "/faq",
+          element: <Faq />,
         },
         {
           path: "/list",
@@ -34,6 +55,7 @@ function App() {
           element: <SinglePage />,
           loader: singlePageLoader,
         },
+        
 
         {
           path: "/login",

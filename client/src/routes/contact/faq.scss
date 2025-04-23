@@ -1,0 +1,122 @@
+@import "../../responsive.scss";
+
+.faq-item {
+  .faq-question {
+    h2 {
+      font-weight: normal; // Ensure the question is in normal font weight
+    }
+  }
+
+  .faq-answer {
+    font-weight: normal; // Ensure the answer is in normal font weight
+  }
+}
+
+.faq-container {
+    font-family: 'Montserrat', sans-serif; // Default font to 'Montserrat'
+  position: absolute;
+  top: 100px;  // Position it below the navbar
+  left: 0;     // Position the container to the left side
+  width: 100%; // Full width of the screen
+  height: calc(100vh - 100px); // Full height below navbar
+  display: flex;
+h3{
+  font-weight: normal;
+}
+  .faq-content {
+    width: 70%;  // FAQ form occupies 70% of the screen width
+    max-width: 700px;
+    padding: 30px;  // Adjust padding for better layout
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-grow: 1;
+    margin-left: 150px;  // Keep it aligned with the navbar
+
+    h1 {
+        font-size: 2rem;
+        margin-bottom: 30px;
+        font-weight: normal;  // Set the font weight to normal
+        text-align: left;
+      }
+
+    .faq-list {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;  // Added more space between FAQ items
+
+      .faq-item {
+        background: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        text-align: left;
+        cursor: pointer;
+        transition: background 0.3s ease;
+
+        &:hover {
+          background: #f8f8f8;
+        }
+
+        .faq-question {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          font-size: 1.2rem;
+          font-weight: normal;
+        }
+
+        .faq-answer {
+          margin-top: 10px;
+          font-size: 1rem;
+          color: #555;
+        }
+      }
+    }
+
+    .faq-footer {
+      margin-top: 30px;
+      text-align: left;
+      h3 {
+        font-size: 1rem;
+        font-weight: normal;  // Set the font weight to normal
+        text-align: left;
+      }
+ 
+
+      button {
+        background-color: #fece51;
+        border: none;
+        padding: 10px 20px;
+        font-size: 1.1rem;
+        cursor: pointer;
+        border-radius: 5px;
+        font-weight: normal;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+          background-color: darken(#fece51, 10%);
+        }
+      }
+    }
+  }
+  .background {
+    position: absolute;
+    top: 0;
+    right: 6.6%;
+    width: 34.7%;
+    height: 100%;
+    background-color: #fcf5f3;
+    background-image: url("/image.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 70%;  // Adjust size (try 40%, 30% if needed)
+    opacity: 0.7; // Adjust transparency if needed
+}
+}

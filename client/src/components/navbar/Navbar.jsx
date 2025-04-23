@@ -4,27 +4,25 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext";
 import { useNotificationStore } from "../../lib/notificationStore";
 
-  function Navbar() {
-    const [open, setOpen] = useState(false);
+function Navbar() {
+  const [open, setOpen] = useState(false);
+  const { currentUser } = useContext(AuthContext);
 
-    const { currentUser } = useContext(AuthContext);
+  const fetch = useNotificationStore((state) => state.fetch);
+  const number = useNotificationStore((state) => state.number);
 
-    const fetch = useNotificationStore((state) => state.fetch);
-    const number = useNotificationStore((state) => state.number);
-
-    if(currentUser) fetch();
+  if (currentUser) fetch();
 
   return (
     <nav>
       <div className="left">
-        <a href="/" className="logo">
-          <img src="/logo.png" alt="" />
-          <span>LamaEstate</span>
-        </a>
+      <a href="/" className="logo">
+                    <img src="icon1.png" alt="Logo"/>
+                    {/* <span>PoojaRealEstate</span> */}
+                </a>
         <a href="/">Home</a>
-        <a href="/">About</a>
-        <a href="/">Contact</a>
-        <a href="/">Agents</a>
+        <a href="/about">About</a>
+        <a href="/contact">Contact</a>
       </div>
       <div className="right">
         {currentUser ? (
@@ -51,13 +49,18 @@ import { useNotificationStore } from "../../lib/notificationStore";
             onClick={() => setOpen((prev) => !prev)}
           />
         </div>
+
         <div className={open ? "menu active" : "menu"}>
           <a href="/">Home</a>
           <a href="/">About</a>
           <a href="/">Contact</a>
           <a href="/">Agents</a>
-          <a href="/login">Sign in</a>
-          <a href="/register">Sign up</a>
+          {currentUser && (
+            <Link to="/profile" className="mobile-profile">
+              {number > 0 && <div className="notification">{number}</div>}
+              <span>Profile</span>
+            </Link>
+          )}
         </div>
       </div>
     </nav>

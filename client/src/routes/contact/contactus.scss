@@ -1,0 +1,131 @@
+@import "../../responsive.scss";
+
+.contact-us-container {
+    position: absolute;
+    top: 100px;  // Position it below the navbar
+    left: 0; // Position the form to the left side
+    width: 100%; // Full width of the screen
+    height: calc(100vh - 100px); // Full height below navbar
+    display: flex;
+
+    // Adjust the background's position and size
+    .background {
+      position: absolute;
+      top: 0;
+      right: 6.6%;
+      width: 34.7%;
+      height: 100%;
+      background-color: #fcf5f3;
+      background-image: url("/image.png");
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: 70%;  // Adjust size (try 40%, 30% if needed)
+      opacity: 0.7; // Adjust transparency if needed
+  }
+  
+
+    .contact-content {
+        margin-left: 150px;
+        width: 70%;  // Form occupies 70% of the screen width
+        max-width: 550px;  // Set a max width to prevent form from becoming too wide
+        padding: 30px;  // Reduced padding to reduce height
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: auto;  // Allow height to adjust automatically based on content
+        flex-grow: 1;  // Ensure it takes available space in the flex container
+    }
+
+    .contact-form {
+        background: white;
+        padding: 20px;  // Reduced padding
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+        gap: 15px;  // Keep a smaller gap between form fields
+        width: 100%;  // Take up all available space in the container
+        max-height: 600px;  // Set a max height to limit form height
+        overflow-y: auto;  // Allow scrolling if content overflows
+
+        label {
+            font-weight: 600;
+            margin-bottom: 6px;  // Reduced margin
+            font-size: 1.1rem;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 10px;  // Reduced padding
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        input:focus, textarea:focus {
+            border-color: #fece51;  // Highlight input fields on focus
+            outline: none;
+        }
+
+        button {
+            background-color: #fece51;
+            border: none;
+            padding: 10px 15px;  // Reduced button padding
+            cursor: pointer;
+            font-size: 1.2rem;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+
+            &:hover {
+                background-color: darken(#fece51, 10%);
+            }
+        }
+
+        textarea {
+            resize: vertical;  // Allow vertical resizing of textarea
+            height: 130px;  // Reduced height of textarea
+        }
+    }
+}
+
+.notification {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 15px;
+    border-radius: 5px;
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+    animation: slideIn 0.5s ease-out, fadeOut 3s 2s forwards;
+  }
+  
+  .notification.success {
+    background-color: #28a745;  // Green color for success
+  }
+  
+  .notification.error {
+    background-color: #dc3545;  // Red color for error
+  }
+  
+  @keyframes slideIn {
+    from {
+      transform: translateX(-50%) translateY(-50px);
+    }
+    to {
+      transform: translateX(-50%) translateY(0);
+    }
+  }
+  
+  @keyframes fadeOut {
+    to {
+      opacity: 0;
+      transform: translateX(-50%) translateY(-50px);
+    }
+  }
+  

@@ -1,0 +1,130 @@
+    
+.about-container {
+    font-family: 'Montserrat', sans-serif; // Default font to 'Montserrat'
+    max-width: 1000px;
+    margin: 50px auto;
+    padding: 40px;
+    background: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+    
+    &:hover {
+      transform: scale(1.02);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    }
+  }
+  
+  .about-header {
+    text-align: center;
+    margin-bottom: 20px;
+  
+    h1 {
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: #333;
+      position: relative;
+      
+      &:after {
+        content: "";
+        display: block;
+        width: 60px;
+        height: 4px;
+        background: #ff6600;
+        margin: 10px auto;
+        border-radius: 2px;
+      }
+    }
+  }
+  
+  .about-content {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  
+    .about-text {
+      flex: 1;
+      
+      p {
+        font-size: 1.1rem;
+        line-height: 1.6;
+        color: #555;
+        margin-bottom: 15px;
+        opacity: 0; // Starts hidden before animation
+        transition: color 0.3s ease-in-out;
+  
+        &:hover {
+          color: #ff6600;
+        }
+      }
+    }
+  
+    .about-image {
+      flex: 1;
+      text-align: center;
+  
+      img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  
+        &:hover {
+          transform: scale(1.05);
+          box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+        }
+      }
+    }
+  }
+  
+  // Responsive Design
+  @media (max-width: 768px) {
+    .about-content {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+  .owners-section {
+    text-align: center;
+    margin-top: 40px;
+  
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+  
+    .owners-container {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+  
+    .owner-card {
+      background: white;
+      border-radius: 10px;
+      padding: 15px;
+      width: 200px;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  
+      img {
+        width: 100%;
+        height: auto;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+  
+      h3 {
+        margin-top: 10px;
+        font-size: 1.2rem;
+      }
+  
+      p {
+        font-size: 1rem;
+        color: gray;
+      }
+    }
+  }
+  
