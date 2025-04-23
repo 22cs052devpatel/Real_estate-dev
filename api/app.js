@@ -9,13 +9,13 @@ import userRoute from "./routes/user.route.js";
 import chatRoute from "./routes/chat.route.js";
 import messageRoute from "./routes/message.route.js";
 
-const app = express();
+const app = express();  
 const __dirname = path.resolve(); // Resolve the current directory
-
 const allowedOrigins = [
-  "http://localhost:5173", // For local development
-  "https://real-estate-dev-2.onrender.com", // Replace with your Render frontend URL
+  "http://localhost:5173",
+  "https://real-estate-dev-2.onrender.com", // update this
 ];
+
 
 app.use(cors({
   origin: allowedOrigins,
@@ -32,14 +32,15 @@ app.use("/api/posts", postRoute);
 app.use("/api/test", testRoute);
 app.use("/api/chats", chatRoute);
 app.use("/api/messages", messageRoute);
-
 // Serve static files from the React app
-app.use(express.static(path.join(__dirname, "./client/dist"))); // Ensure "dist" is correct
+app.use(express.static(path.join(__dirname, "../client/dist")));
 
 // Catch-all handler for React routes
 app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "./client/dist", "index.html"));
+  res.sendFile(path.join(__dirname, "../client/dist", "index.html"));
 });
+
+
 // Start the servers
 const port = process.env.PORT || 8800; // Use Render's PORT or fallback to 8800 for local development
 app.listen(port, () => {
