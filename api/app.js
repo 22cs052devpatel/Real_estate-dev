@@ -38,10 +38,9 @@ app.use(express.static(path.join(__dirname, "../client/dist"))); // Ensure "dist
 
 // Catch-all handler for React routes
 app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "client/dist/assets", "index.html")); // Ensure "dist" is correct
+  res.sendFile(path.join(__dirname, "../client/dist", "index.html"));
 });
-
-// Start the server
+// Start the servers
 const port = process.env.PORT || 8800; // Use Render's PORT or fallback to 8800 for local development
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
