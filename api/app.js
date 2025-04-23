@@ -34,11 +34,11 @@ app.use("/api/chats", chatRoute);
 app.use("/api/messages", messageRoute);
 
 // Serve static files from the React app
-app.use(express.static(path.join(__dirname, "../client/dist"))); // Ensure "dist" is correct
+app.use(express.static(path.join(__dirname, "./client/dist"))); // Ensure "dist" is correct
 
 // Catch-all handler for React routes
 app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "../client/dist", "index.html"));
+  res.sendFile(path.join(__dirname, "./client/dist", "index.html"));
 });
 // Start the servers
 const port = process.env.PORT || 8800; // Use Render's PORT or fallback to 8800 for local development
